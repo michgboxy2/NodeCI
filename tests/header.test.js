@@ -1,3 +1,4 @@
+jest.setTimeout(80000);
 
 // const puppeteer = require('puppeteer');
 // const sessionFactory = require('./factories/sessionFactory');
@@ -53,7 +54,7 @@ test('clicking login starts oauth flow', async () => {
 	expect(url).toMatch(/accounts\.google\.com/);
 
 
-}, 70000);
+});
 
 
 test('when signed in, show logout button', async (done) => {
@@ -83,4 +84,4 @@ test('when signed in, show logout button', async (done) => {
 
 		
 		
-}, 100000);
+});
