@@ -1,8 +1,8 @@
-jest.setTimeout(80000);
-
 // const puppeteer = require('puppeteer');
 // const sessionFactory = require('./factories/sessionFactory');
 // const userFactory    = require('./factories/userFactory');
+jest.setTimeout(200000);
+
 const Page           = require('./helpers/page');
 	
 
@@ -11,9 +11,9 @@ const Page           = require('./helpers/page');
 
 beforeEach(async () => {
 
-	 // page = await Page.build();	  
+	 page = await Page.build();	  
 	 
-	 // await page.goto('localhost:3000');
+	 await page.goto('http://localhost:3000');
 
 });
 
@@ -26,9 +26,9 @@ afterEach( async () => {
 
 test('the header has the correct text', async () => {
 
-	page = await Page.build();	  
+	// page = await Page.build();	  
 	
-	await page.goto('http://localhost:3000');
+	// await page.goto('http://localhost:3000');
 	
 
 
@@ -38,14 +38,14 @@ test('the header has the correct text', async () => {
 
 	expect(text).toEqual('Blogster');
 	
-});
+}, 100000);
 
 
 test('clicking login starts oauth flow', async () => {
 
-	page = await Page.build();	  
+	// page = await Page.build();	  
 	
-	await page.goto('localhost:3000');
+	// await page.goto('localhost:3000');
 	await page.click('.right a');
 
 	const url = await page.url();
@@ -59,9 +59,9 @@ test('clicking login starts oauth flow', async () => {
 
 test('when signed in, show logout button', async (done) => {
 
-	page = await Page.build();	  
+	// page = await Page.build();	  
 	
-	await page.goto('localhost:3000');
+	// await page.goto('localhost:3000');
 
 
 
@@ -84,4 +84,4 @@ test('when signed in, show logout button', async (done) => {
 
 		
 		
-});
+}, 100000);
